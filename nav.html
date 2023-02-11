@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="img/favicon.ico">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
     <title>Главная</title>
 </head>
 
@@ -32,31 +33,293 @@
         <a href="index.html" style="display: block; margin-bottom: 20px;">
             Главная
         </a>
+        <a href="index-models.html" style="display: block; margin-bottom: 20px;">
+            Главная с моделями
+        </a>
+        <a href="index-generation.html" style="display: block; margin-bottom: 20px;">
+            Главная с поколениями
+        </a>
+        <a href="blog.html" style="display: block; margin-bottom: 20px;">
+            Статьи по марке
+        </a>
+        <a href="blog2.html" style="display: block; margin-bottom: 20px;">
+            Все статьи рубрики
+        </a>
+        <a href="article.html" style="display: block; margin-bottom: 20px;">
+            Статья
+        </a>
+        <a href="profile.html" style="display: block; margin-bottom: 20px;">
+            Личный кабинет
+        </a>
+        <a href="profile2.html" style="display: block; margin-bottom: 20px;">
+            Личный кабинет 2
+        </a>
+        <a href="experts.html" style="display: block; margin-bottom: 20px;">
+            Автоэксперты
+        </a>
+        <a href="experts2.html" style="display: block; margin-bottom: 20px;">
+            Страница эксперта
+        </a>
+        <a href="experts3.html" style="display: block; margin-bottom: 20px;">
+            Страница эксперта 2
+        </a>
+        <a href="conf.html" style="display: block; margin-bottom: 20px;">
+            Пользовательское соглашение
+        </a>
+        <a href="about.html" style="display: block; margin-bottom: 20px;">
+            О проекте
+        </a>
+        <a href="search.html" style="display: block; margin-bottom: 20px;">
+            Результаты поиска
+        </a>
 
 
 
-
-        <button style="border: 2px solid #000;margin-bottom: 20px;" data-bs-toggle="modal" data-bs-target="#quickOrder">
-            Быстрый заказ
+        <button style="border: 2px solid #000;margin-bottom: 20px;" data-modal="messageModal">
+            Напишите нам
+        </button>
+        <button style="border: 2px solid #000;margin-bottom: 20px;" data-modal="loginModal">
+            Войдите в личный кабинет
+        </button>
+        <button style="border: 2px solid #000;margin-bottom: 20px;" data-modal="codeModal">
+            Введите кода
+        </button>
+        <button style="border: 2px solid #000;margin-bottom: 20px;" data-modal="nameModal">
+            Введите ваше имя
         </button>
 
     </div>
 
-    <div class="modal" id="quickOrder" aria-hidden="true">
-    <div class="modal-dialog">
-        <button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.55401 10.5L2 2.94599L2.94599 2L10.5 9.55401L18.054 2L19 2.94599L11.446 10.5L19 18.054L18.054 19L10.5 11.446L2.94599 19L2 18.054L9.55401 10.5Z" fill="#333333"/>
-            </svg>
+    <div class="modal" id="messageModal">
+    <div class="modal__bg _close-modal"></div>
+    <div class="modal__dialog">
+        <button class="modal__close _close-modal">
+            <img src="img/close2.svg" alt="">
         </button>
+        <div class="modal__info">
+            <div class="modal__title display2 semi-bold-text accent2-text">
+                Напишите нам
+            </div>
+        </div>
+        <form class="modal__form">
+            <fieldset class="fg ">
+    
+    
+    <label>
+        Ваше имя
+    </label>
+    <input @@disabled type="text" placeholder="Иван">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+</fieldset>
 
+            <fieldset class="fg ">
+    
+    
+    <label>
+        E-mail адрес
+    </label>
+    <input @@disabled type="email" placeholder="ivan@mail.ru">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+</fieldset>
 
+            <fieldset class="fg _error">
+    
+    
+    <label>
+        Номер телефона *
+    </label>
+    <input @@disabled type="tel" placeholder="">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            * Это поле обязательно для заполнения
+        </div>
+    </div>
+    
+</fieldset>
 
+            <fieldset class="fg ">
+    
+    <label>
+        Ваш вопрос *
+    </label>
+    <textarea placeholder="Напишите что-нибудь"></textarea>
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+</fieldset>
+
+            <div class="modal__captcha">
+                <fieldset class="fg _error">
+    
+    
+    <label>
+        Введите слово с картинки
+    </label>
+    <input  type="text" placeholder="">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            * Неверные символы, попробуйте ещё раз
+        </div>
+    </div>
+    
+</fieldset>
+
+                <div class="captcha">
+                    <img src="img/captcha.png" alt="">
+                    <button class="captcha__btn">
+                        <img src="img/reload.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="m-radio modal__check">
+                <input type="checkbox">
+                <label>
+                    <span class="text14">
+                        Я соглашаюсь с
+                        <a href="#">политикой конфиденциальности</a>
+                        и <a href="#">условиями обработки персональных данных</a>
+                    </span>
+                </label>
+            </div>
+
+            <button class="modal__btn m-btn m-btn50 linear-btn">
+                <span>Отправить</span>
+            </button>
+        </form>
     </div>
 </div>
 
+<div class="modal modal-small" id="loginModal">
+    <div class="modal__bg _close-modal"></div>
+    <div class="modal__dialog">
+        <button class="modal__close _close-modal">
+            <img src="img/close2.svg" alt="">
+        </button>
+        <div class="modal__info">
+            <div class="display2 semi-bold-text">
+                Войдите в личный кабинет
+            </div>
+            <div class="text17 font2 light-weight-text">
+                Вы сможете оставлять комментарии, получать рассылки, сохранять статьи
+            </div>
+        </div>
+        <form class="modal__form">
+            <fieldset class="fg ">
+    
+    
+    <input @@disabled type="email" placeholder="Ваш e-mail адрес">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+    <div class="fg__hint">
+        <div class="text14">
+            На указанную почту придёт код для входа в личный кабинет
+        </div>
+    </div>
+</fieldset>
 
-<!-- <div class="modal-backdrop show"></div> -->
+            <button class="modal__btn m-btn m-btn50 linear-btn">
+                <span>Отправить</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="modal modal-small" id="codeModal">
+    <div class="modal__bg _close-modal"></div>
+    <div class="modal__dialog">
+        <button class="modal__close _close-modal">
+            <img src="img/close2.svg" alt="">
+        </button>
+        <div class="modal__info">
+            <div class="display2 semi-bold-text">
+                Введите кода
+            </div>
+            <div class="text17 font2 light-weight-text">
+                Ма выслали шестизначный код для входа на почту na**nt@kremlin.net. Скопируйте его в поле ввода.
+            </div>
+        </div>
+        <form class="modal__form">
+            <fieldset class="fg code-field">
+    
+    
+    <input @@disabled type="text" placeholder="ХХХ ХХХ">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+</fieldset>
+
+            <button class="modal__btn m-btn m-btn50 linear-btn">
+                <span>Продолжить</span>
+            </button>
+        </form>
+        <button class="modal__resend">
+            <spam class="text11 grey-text font2">
+                Отправить код ещё раз
+            </spam>
+        </button>
+    </div>
+</div>
+
+<div class="modal modal-small" id="nameModal">
+    <div class="modal__bg _close-modal"></div>
+    <div class="modal__dialog">
+        <button class="modal__close _close-modal">
+            <img src="img/close2.svg" alt="">
+        </button>
+        <div class="modal__info">
+            <div class="display2 semi-bold-text">
+                Введите ваше имя
+            </div>
+            <div class="text17 font2 light-weight-text">
+                Так нам будет удобнее обращаться к вам (общаться с вами? вотэвер)
+            </div>
+        </div>
+        <form class="modal__form">
+            <fieldset class="fg ">
+    
+    
+    <input @@disabled type="text" placeholder="Иван">
+    <div class="fg__error-text">
+        <div class="text14 red-text">
+            
+        </div>
+    </div>
+    
+</fieldset>
+
+            <button class="modal__btn m-btn m-btn50 linear-btn">
+                <span>Войти</span>
+            </button>
+        </form>
+        <button class="modal__resend">
+            <spam class="text11 grey-text font2">
+                Отправить код ещё раз
+            </spam>
+        </button>
+    </div>
+</div>
+
     <!--  -->
     <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
